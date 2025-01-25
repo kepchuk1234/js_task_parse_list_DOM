@@ -3,6 +3,10 @@
 const list = document.querySelector('ul');
 
 function sortList(li) {
+  array.forEach((item) => li.append(item));
+}
+
+function getEmployees(li) {
   const items = [...li.querySelectorAll('li')];
 
   items.sort((item1, item2) => {
@@ -13,7 +17,9 @@ function sortList(li) {
     return secondSalary - firstSalary;
   });
 
-  items.forEach((item) => li.append(item));
+  return items;
 }
+
+const array = getEmployees(list);
 
 sortList(list);
